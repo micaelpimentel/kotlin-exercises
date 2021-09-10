@@ -8,5 +8,5 @@ class Analista(
     salario = salario
 ) {
     override val bonificacao: Double
-        get() = super.bonificacao + salario * 0.1
+        get() = salario * 0.1
 }

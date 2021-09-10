@@ -9,7 +9,7 @@ class Gerente(
     salario = salario
 ) {
     override val bonificacao: Double
-        get() = super.bonificacao + salario
+        get() = salario
 
     fun autenticacao(senha: Int) = this.senha == senha
 }
