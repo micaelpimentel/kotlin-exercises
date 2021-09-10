@@ -1,11 +1,12 @@
-class ContaPoupanca(
+class ContaSalario(
     titular: String,
     numero: Int
-) : ContaTransferivel(
+) : Conta(
     titular,
     numero
 ) {
     override fun sacar(valorSaque: Double) {
-        if (valorSaque <= this.saldo) this.saldo -= valorSaque
+        if (this.saldo >= valorSaque)
+            this.saldo -= valorSaque
     }
 }
