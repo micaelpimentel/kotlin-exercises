@@ -1,5 +1,5 @@
 import br.com.alura.bytebank.modelo.Autenticavel
-import br.com.alura.bytebank.modelo.Conta.Companion.totalContas
+import br.com.alura.bytebank.modelo.Conta
 import br.com.alura.bytebank.modelo.SistemaInterno
 
 fun main() {
@@ -19,5 +19,5 @@ fun main() {
 
     testaContasDiferentes()
 
-    println("Total de contas: $totalContas")
+    println("Total de contas: ${Conta.total}")
 }
