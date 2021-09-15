@@ -1,23 +1,28 @@
-import br.com.alura.bytebank.modelo.Autenticavel
-import br.com.alura.bytebank.modelo.Conta
-import br.com.alura.bytebank.modelo.SistemaInterno
+import br.com.alura.bytebank.modelo.Endereco
 
 fun main() {
 
-    val cliente = object : Autenticavel {
-        val nome = "Fram"
-        val cpf = "111.111.111-11"
-        val senha = 1000
+    val objeto: Any = Any()
 
-        override fun autenticacao(senha: Int) = senha == this.senha
-    }
+    imprime(objeto)
+    imprime(12)
+    imprime(22.2)
 
-    println("Fliente: ${cliente.nome}")
+    val teste = imprime(Endereco())
+    println(teste)
 
-    val sistemaInterno = SistemaInterno()
-    sistemaInterno.entra(cliente, 100)
+    testaFuncionario()
+}
 
-    testaContasDiferentes()
+fun imprime(valor: Any): Any {
+    println(valor)
+    return valor
+}
 
-    println("Total de contas: ${Conta.total}")
+fun imprime(valor: Int) {
+
+}
+
+fun imprime(valor: Double) {
+
 }
