@@ -1,3 +1,6 @@
+import br.com.alura.bytebank.modelo.Cliente
+import br.com.alura.bytebank.modelo.ContaCorrente
+
 fun testaCopiaEReferencias() {
     var numerox = 10
     var numeroy = numerox
@@ -6,7 +9,8 @@ fun testaCopiaEReferencias() {
     println(numerox)
     println(numeroy)
 
-    val contaJoao = ContaCorrente("Joao", 2000)
+    val joao = Cliente("Joao", "", 1)
+    val contaJoao = ContaCorrente(joao, 2000)
     val contaMaria = contaJoao
 
     println("titular conta joao: ${contaJoao.titular}")

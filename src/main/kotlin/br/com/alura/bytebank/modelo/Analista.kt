@@ -1,4 +1,6 @@
-class Auxiliar(
+package br.com.alura.bytebank.modelo
+
+class Analista(
     nome: String,
     cpf: String,
     salario: Double,

@@ -1,7 +1,16 @@
+import br.com.alura.bytebank.modelo.Cliente
+import br.com.alura.bytebank.modelo.ContaCorrente
+import br.com.alura.bytebank.modelo.ContaPoupanca
+import br.com.alura.bytebank.modelo.ContaSalario
+
 fun testaContasDiferentes() {
-    val contaCorrente = ContaCorrente("Alex", 1000)
-    val contaPoupanca = ContaPoupanca("Fram", 1001)
-    val contaSalario = ContaSalario("Maria", 1002)
+    val alex = Cliente("Alex","111.111.111-11",1)
+    val fram = Cliente("Alex","111.111.111-11",1)
+    val maria = Cliente("Alex","111.111.111-11",1)
+
+    val contaCorrente = ContaCorrente(alex, 1000)
+    val contaPoupanca = ContaPoupanca(fram, 1001)
+    val contaSalario = ContaSalario(maria, 1002)
 
     contaCorrente.depositar(1000.0)
     contaPoupanca.depositar(1000.0)

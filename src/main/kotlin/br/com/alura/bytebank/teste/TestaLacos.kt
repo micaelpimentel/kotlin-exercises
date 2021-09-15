@@ -15,7 +15,7 @@ fun testaLacos() {
         saldo *= i
 
         println("Titular: $titular")
-        println("Conta: $conta")
+        println("br.com.alura.bytebank.modelo.Conta: $conta")
         println("Saldo: $saldo")
 
         verificaCondicao(saldo)
@@ -33,7 +33,7 @@ fun testaLacos() {
         saldo *= i
 
         println("Titular: $titular")
-        println("Conta: $conta")
+        println("br.com.alura.bytebank.modelo.Conta: $conta")
         println("Saldo: $saldo")
 
         verificaCondicao(saldo)
