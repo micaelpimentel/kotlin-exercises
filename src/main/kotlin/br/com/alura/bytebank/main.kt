@@ -3,6 +3,28 @@ import java.lang.ClassCastException
 
 fun main() {
     println("início main")
+
+    val entrada: String = "1.9"
+    val valor: Double? = try {
+        entrada.toDouble()
+    } catch (e: NumberFormatException) {
+        println("Problema na conversao")
+        e.printStackTrace()
+        null
+    }
+
+    val valorComTaxa = if (valor != null) {
+        valor + 0.1
+    } else {
+        null
+    }.also(::println)
+
+    if (valor != null) {
+        println("Valor recebido $valor")
+    } else {
+        println("Valor invalido")
+    }
+
     funcao1()
     println("fim main")
 }
@@ -13,7 +35,7 @@ fun funcao1() {
         funcao2()
     } catch (e: ClassCastException) {
         println("Pegou ClassCastException")
-        //println(e.message)
+        println(e.message)
         e.printStackTrace()
         println(e.cause)
     }
