@@ -3,7 +3,7 @@ package br.com.alura.bytebank.modelo
 abstract class Conta(
     val titular: Cliente,
     val numero: Int
-) {
+) : Autenticavel {
 
     companion object {
         var total = 0
@@ -24,4 +24,8 @@ abstract class Conta(
     }
 
     abstract fun sacar(valorSaque: Double)
+
+    override fun autenticacao(senha: Int): Boolean {
+        return titular.autenticacao(senha)
+    }
 }

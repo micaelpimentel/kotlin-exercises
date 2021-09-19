@@ -30,14 +30,14 @@ fun testaContasDiferentes() {
     contaPoupanca.saldo.also(::println)
     contaSalario.saldo.also(::println)
 
-    contaCorrente.transfere(100.0, contaSalario)
+    contaCorrente.transfere(100.0, contaSalario, 1)
 
     println("Saldo apos transferencia corrente -> salario")
     contaCorrente.saldo.also(::println)
     contaPoupanca.saldo.also(::println)
     contaSalario.saldo.also(::println)
 
-    contaPoupanca.transfere(100.0, contaSalario)
+    contaPoupanca.transfere(100.0, contaSalario, 1)
 
     println("Saldo apos transferencia poupanca -> salario")
     contaCorrente.saldo.also(::println)
