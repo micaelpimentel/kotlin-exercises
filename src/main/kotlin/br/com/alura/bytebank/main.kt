@@ -1,5 +1,4 @@
-import br.com.alura.bytebank.modelo.Endereco
-import java.lang.ClassCastException
+import br.com.alura.bytebank.exceptions.SaldoInsuficienteException
 
 fun main() {
     println("início main")
@@ -11,7 +10,7 @@ fun funcao1() {
     println("início funcao1")
     try {
         funcao2()
-    } catch (e: ClassCastException) {
+    } catch (e: SaldoInsuficienteException) {
         println("Pegou ClassCastException")
         println(e.message)
         e.printStackTrace()
@@ -25,8 +24,8 @@ fun funcao2() {
 
     for (i in 1..5) {
         println(i)
-        val endereco = Any()
-        throw Exception("Lançando exceçao!")
+        throw SaldoInsuficienteException()
     }
     println("fim funcao2")
 }
+
