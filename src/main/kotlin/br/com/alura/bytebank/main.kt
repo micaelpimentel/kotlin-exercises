@@ -1,5 +1,4 @@
 import br.com.alura.bytebank.modelo.Endereco
-import br.com.alura.bytebank.teste.testaAny
 import java.lang.ClassCastException
 
 fun main() {
@@ -14,6 +13,9 @@ fun funcao1() {
         funcao2()
     } catch (e: ClassCastException) {
         println("Pegou ClassCastException")
+        //println(e.message)
+        e.printStackTrace()
+        println(e.cause)
     }
     println("fim funcao1")
 }
