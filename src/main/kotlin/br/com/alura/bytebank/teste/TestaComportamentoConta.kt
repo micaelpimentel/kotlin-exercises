@@ -42,6 +42,9 @@ fun testaComportamentoConta() {
     } catch (e: FalhaAutenticacaoException) {
         println(e.message)
         e.printStackTrace()
+    } catch (e: Exception) {
+        println("Erro desconhecido")
+        e.printStackTrace()
     }
 
     println(conta1.saldo)
