@@ -48,10 +48,23 @@ fun trabalhandoComListas() {
         .filter { it.autor.startsWith("Joao") }
         .map { it.titulo }
         .also(::println)
+
+    livros
+        .groupBy { it.editora ?: "Editora desconhecida" }
+        .forEach{ (editora: String, livrosAgrupados: List<Livro>) ->
+            println("$editora: ${livrosAgrupados.joinToString { it.titulo }}")
+        }
+
+    val prateleira = Prateleira("ficçao", livros)
+
+    prateleira.organizaPorAno().imprimeComMarcadores()
+    prateleira.organizaPorAutor().imprimeComMarcadores()
 }
 
-fun List<Livro>.imprimeComMarcadores() {
-    val textoFormatado = this.joinToString(separator = "\n") {
+fun List<Livro?>.imprimeComMarcadores() {
+    val textoFormatado = this
+        .filterNotNull()
+        .joinToString(separator = "\n") {
         " - ${it.titulo} de ${it.autor}"
     }
     println("#### Lista de Livros ####\n$textoFormatado")
