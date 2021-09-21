@@ -1,14 +1,14 @@
 package br.com.micael.collections
 
-import br.com.micael.collections.listas.testaCopia
-
 fun main() {
-    val assistiramCursoAndroid = listOf("Alex", "Fran", "Gui", "Maria")
-    val assistiramCursoKotlin = listOf("Alex", "Paulo", "Maria")
-    val assistiramAmbos = assistiramCursoAndroid + assistiramCursoKotlin
-
-//    assistiramAmbos.addAll(assistiramCursoAndroid)
-//    assistiramAmbos.addAll(assistiramCursoKotlin)
-
-    println(assistiramAmbos.distinct())
+    val assistiramCursoAndroid: MutableSet<String> = mutableSetOf("Alex", "Fran", "Gui", "Maria")
+    val assistiramCursoKotlin: MutableSet<String> = mutableSetOf("Alex", "Paulo", "Maria")
+//    val assistiramAmbos: Set<String> = assistiramCursoKotlin + assistiramCursoAndroid
+    val assistiramAmbos = mutableSetOf<String>()
+    assistiramAmbos.addAll(assistiramCursoAndroid)
+    assistiramAmbos.addAll(assistiramCursoKotlin)
+    assistiramAmbos.add("Gui")
+    assistiramAmbos.add("Ana")
+    assistiramAmbos.add("Ana")
+    println(assistiramAmbos)
 }
