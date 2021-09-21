@@ -23,6 +23,7 @@ fun main() {
     println(pedidos)
     pedidos[1] = 23.0
     println(pedidos)
+
     pedidos.putIfAbsent(6, 43.0)
     println(pedidos)
     pedidos.putIfAbsent(6, 2.0)
