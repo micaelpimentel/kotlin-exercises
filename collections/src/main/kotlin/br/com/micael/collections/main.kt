@@ -2,17 +2,19 @@ package br.com.micael.collections
 
 fun main() {
     val bancoDeNomes = BancoDeNomes()
-    //bancoDeNomes.nomes.add("Alex")
-    bancoDeNomes.salvo("Alex")
+    val nomesSalvos: Collection<String> = bancoDeNomes.nomes
+    bancoDeNomes.salva("Alex")
+
     println(bancoDeNomes.nomes)
+    println(nomesSalvos)
 }
 
 class BancoDeNomes {
 
-    val nomes: Collection<String> get() = Companion.dados
+    val nomes: Collection<String> get() = dados.toList()
 
-    fun salvo(nome: String) {
-        Companion.dados.add(nome)
+    fun salva(nome: String) {
+        dados.add(nome)
     }
 
     companion object {
