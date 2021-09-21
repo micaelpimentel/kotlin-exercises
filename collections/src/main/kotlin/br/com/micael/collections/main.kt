@@ -1,35 +1,28 @@
 package br.com.micael.collections
 
 fun main() {
-    val pedidos = mutableMapOf(
-        Pair(1, 20.0),
-        Pair(2, 34.0),
-        3 to 50.0
-    )
+    val assistiramCursoAndroid: MutableSet<String> = mutableSetOf("Alex", "Fran", "Gui", "Maria")
+    val assistiramCursoKotlin: MutableSet<String> = mutableSetOf("Alex", "Paulo", "Maria")
+//    val assistiramAmbos: Set<String> = assistiramCursoKotlin + assistiramCursoAndroid
+    val assistiramAmbos = mutableSetOf<String>()
+    assistiramAmbos.addAll(assistiramCursoAndroid)
+    assistiramAmbos.addAll(assistiramCursoKotlin)
+    assistiramAmbos.add("Gui")
+    assistiramAmbos.add("Ana")
+    assistiramAmbos.add("Ana")
+    println(assistiramAmbos)
 
-    println(pedidos)
-    val pedido = pedidos[2]
-    pedido?.let {
-        println(pedido)
-    }
+    println(assistiramCursoAndroid + assistiramCursoKotlin)
+    println(assistiramCursoKotlin union assistiramCursoAndroid)
 
-    for (p in pedidos) {
-        println("Numero do pedido ${p.key}, valor: ${p.value}")
-    }
+    println(assistiramCursoAndroid - assistiramCursoKotlin)
+    println(assistiramCursoKotlin - assistiramCursoAndroid)
+    println(assistiramCursoKotlin subtract assistiramCursoAndroid)
 
-    pedidos[4] = 70.0
-    println(pedidos)
-    pedidos.put(5, 80.0)
-    println(pedidos)
-    pedidos[1] = 23.0
-    println(pedidos)
-    pedidos.putIfAbsent(6, 43.0)
-    println(pedidos)
-    pedidos.putIfAbsent(6, 2.0)
-    println(pedidos)
+    println(assistiramCursoKotlin intersect assistiramCursoAndroid)
 
-    pedidos.remove(6)
-    println(pedidos)
-    pedidos.remove(3, 30.0)
-    println(pedidos)
+    val assistiramList = assistiramAmbos.toMutableList()
+    assistiramList.add("Alex")
+    println(assistiramList)
+    println(assistiramList.toSet())
 }
