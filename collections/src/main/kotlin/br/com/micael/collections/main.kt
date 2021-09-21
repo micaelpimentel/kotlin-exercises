@@ -6,6 +6,9 @@ fun main() {
         Pedido(2, 60.0),
         Pedido(3, 30.0),
         Pedido(4, 70.0),
+        Pedido(5, 120.0),
+        Pedido(6, 41.1),
+        Pedido(7, 23.5),
     )
     println(pedidos)
 
@@ -36,6 +39,12 @@ fun main() {
         nome.first()
     }
     println(agenda)
+
+    val pedidosGroupingBy = pedidos.groupingBy { pedido ->
+        pedido.valor > 50.0
+    }
+//    pedidosGroupingBy.keyOf(Pedido(numero = 1, valor = 20.0))
+    pedidosGroupingBy.eachCount().also(::println)
 }
 
 data class Pedido(val numero: Int, val valor: Double)
