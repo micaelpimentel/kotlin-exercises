@@ -1,32 +1,31 @@
 
 fun main() {
-    val minhaFuncaoLambda = {
-        println("Executa com o lambda")
-    }
-    println(minhaFuncaoLambda())
+//    testaTipoFuncaoClasse()
+//    testaTipoFuncaoReferencia()
 
-    val minhaFuncaoAnonima: () -> Unit = fun(){
-        println("Executa como anonima")
+    val minhaFuncaoLambda = { a: Int, b: Int ->
+        a + b
     }
-    println(minhaFuncaoAnonima())
+    println(minhaFuncaoLambda(15, 10))
+
+    val minhaFuncaoAnonima: (Int, Int) -> Int = fun(a, b): Int{
+        return a + b
+    }
+    println(minhaFuncaoAnonima(13, 8))
 }
 
 fun testaTipoFuncaoClasse() {
-    val minhaFuncaoClasse = Teste()
-    println(minhaFuncaoClasse())
+    val minhaFuncaoClasse = Soma()
+    println(minhaFuncaoClasse(2, 7))
 }
 
 fun testaTipoFuncaoReferencia() {
-    val minhaFuncao: () -> Unit = ::teste
-    println(minhaFuncao())
+    val minhaFuncao = ::soma
+    println(minhaFuncao(3, 4))
 }
 
-fun teste() {
-    println("executa teste")
-}
+fun soma(a: Int, b: Int) = a + b
 
-class Teste : () -> Unit {
-    override fun invoke() {
-        println("executa invoke do teste")
-    }
+class Soma : (Int, Int) -> Int {
+    override fun invoke(a: Int, b: Int): Int = a + b
 }
