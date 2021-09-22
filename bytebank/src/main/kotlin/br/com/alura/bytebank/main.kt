@@ -1,19 +1,18 @@
-import br.com.alura.bytebank.modelo.Endereco
-import java.lang.IllegalStateException
 
 fun main() {
-    val enderecoNulo: Endereco? = Endereco(bairro = "Alvorada", complemento = "Predio")
-    enderecoNulo?.let {
-        println(it.bairro.length)
-        val complementotamanho: Int = it.complemento?.length ?: throw IllegalStateException("Complemento nao pode ser vazio")
-        println(complementotamanho)
-    }
+    val minhaFuncao: () -> Unit = ::teste
+    println(minhaFuncao())
 
-    teste(1)
-    teste("")
+    val minhaFuncaoClasse = Teste()
+    println(minhaFuncaoClasse())
 }
 
-fun teste(num: Any) {
-    val numero = num as? Int
-    println(numero)
+fun teste() {
+    println("executa teste")
+}
+
+class Teste : () -> Unit {
+    override fun invoke() {
+        println("executa invoke do teste")
+    }
 }
