@@ -8,7 +8,7 @@ fun testaHOF() {
         println(it)
     }
     somaReceiver(4,7) {
-        println(it)
+        println(this)
     }
 
     val autenticavel = object : Autenticavel {
@@ -16,8 +16,12 @@ fun testaHOF() {
         override fun autenticacao(senha: Int) = this.senha == senha
     }
 
-    SistemaInterno().entra(autenticavel, 12534) {
+    val sistema = SistemaInterno()
+    sistema.entra(autenticavel, 1234) {
         println("realizar pagamento")
+    }
+    sistema.entraReceiver(autenticavel, 1234) {
+        pagamento()
     }
 }
 
@@ -27,8 +31,9 @@ fun soma(a: Int, b: Int, resultado: (Int) -> Unit) {
     println("soma aconteceu")
 }
 
-fun somaReceiver(a: Int, b: Int, resultado: (Int) -> Unit) {
+fun somaReceiver(a: Int, b: Int, resultado: Int.() -> Unit) {
     println("soma acontecendo")
-    resultado(a + b)
+    val total = a + b
+    total.resultado()
     println("soma aconteceu")
 }
