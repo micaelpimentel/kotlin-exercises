@@ -34,11 +34,11 @@ fun testaTipoFuncaoClasse() {
 }
 
 fun testaTipoFuncaoReferencia() {
-    val minhaFuncao = ::soma
+    val minhaFuncao = ::soma1
     println(minhaFuncao(3, 4))
 }
 
-fun soma(a: Int, b: Int) = a + b
+fun soma1(a: Int, b: Int) = a + b
 
 class Soma : (Int, Int) -> Int {
     override fun invoke(a: Int, b: Int): Int = a + b
