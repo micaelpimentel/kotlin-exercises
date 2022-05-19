@@ -15,7 +15,7 @@ Siga esses passos para instalar o DHU na sua máquina:
 - Antes de tudo, certifique-se de que o modo de desenvolvedor esteja habilitado e a versão do Android do seu dispositivo seja 6.0 (API 23) ou superior
 - Compile e instale o app no dispositivo
 - Instale o Android Auto no dispositivo. Se o Android Auto ja estiver instalado, certifique-se de que esteja atualizado com a versão mais recente.
-- Configure o Android Studio para usar o canal de atualizações beta (mostrado no ). Se aparecer uma solicitação para atualizar o Android Studio, pode ignorar.
+- [Configure o Android Studio para usar o canal de atualizações beta](#mudar-canal). Se aparecer uma solicitação para atualizar o Android Studio, pode ignorar.
 - Abra o **SDK Manager**, e navegue até a aba **SDK Tools**, então baixe o pacote da versão 2.0 do **Android Auto Desktop Head Unit Emulator**
 
 ![image](https://user-images.githubusercontent.com/83781823/169386850-86951c2d-7fcd-4d96-b8f3-5a3c84a0ac92.png)
